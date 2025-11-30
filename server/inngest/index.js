@@ -45,7 +45,13 @@
 import { Inngest } from "inngest";
 import User from "../models/User.js";   // ✅ FIXED import
 
-export const inngest = new Inngest({ id: "movie-ticket-booking" });
+// export const inngest = new Inngest({ id: "movie-ticket-booking" });
+
+export const inngest = new Inngest({
+  id: "movie-ticket-booking",
+  signingKey: process.env.INNGEST_SIGNING_KEY,
+});
+
 
 // USER CREATED
 const syncUserCreation = inngest.createFunction(
