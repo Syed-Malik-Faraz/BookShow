@@ -28,9 +28,7 @@ app.get('/' , (req , res)=>{
     res.send("Server is live ")
 } )
 
-app.use(
-  '/api/inngest',
-  serve({
+app.use('/api/inngest', serve({
     client: inngest,
     functions,
     signingKey: process.env.INNGEST_SIGNING_KEY,
