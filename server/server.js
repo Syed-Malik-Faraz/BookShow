@@ -35,6 +35,9 @@ app.use('/api/inngest', serve({
   })
 );
 
+// console.log("INGEST_SIGNING_KEY:", process.env.INGEST_SIGNING_KEY);
+
+
 // app.use('/api/inngest', serve({ client: inngest, functions }))
 
 app.listen(port ,()=>{
