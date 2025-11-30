@@ -1,0 +1,30 @@
+import React from 'react'
+import MovieCard from '../components/MovieCard'
+import { dummyShowsData } from '../assets/assets'
+import BlurCircle from '../components/BlurCircle'
+
+const Fav = () => {
+    return dummyShowsData.length > 0 ? (
+        <div className=' relative my-40 mb-60 px-6 md:px-16 lg:px-40 xl:px-44
+overflow-hidden min-h-[80vh]' >
+            <BlurCircle  />
+            <BlurCircle bottom="50px" />
+
+            <h1 className='text-lg font-medium my-4' > Your Favourite Movies</h1>
+            <div className='flex flex-wrap max-sm:justify-center gap-8'>
+                {dummyShowsData.map((movie) => (
+                    <MovieCard movie={movie} key={movie._id} />
+
+))}
+
+            </div>
+        </div>
+    ) : (
+        <div className=' flex items-center justify-center h-screen w-screen'>
+
+            <h1 className=' text-3xl font-bold '>No Movies Available</h1>
+        </div>
+    )
+
+}
+export default Fav
